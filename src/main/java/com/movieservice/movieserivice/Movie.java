@@ -13,7 +13,7 @@ public class Movie {
     private Long id;
     private String title;
     private int yearOfRelease;
-    private enum genre {COMEDY, THRILLER, DOCUMENTARY, ACTION};
+    private enum genre {COMEDY, THRILLER, DOCUMENTARY, ACTION, DRAMA};
 
     public Movie() {
     }
