@@ -1,6 +1,6 @@
 package com.movieservice.movieserivice.controller;
 
-import com.movieservice.movieserivice.Movie;
+import com.movieservice.movieserivice.entity.Movie;
 import com.movieservice.movieserivice.service.MovieService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,7 +1,7 @@
 package com.movieservice.movieserivice.service;
 
-import com.movieservice.movieserivice.Movie;
-import exception.MovieNotFoundException;
+import com.movieservice.movieserivice.entity.Movie;
+import com.movieservice.movieserivice.exception.MovieNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.movieservice.movieserivice;
+package com.movieservice.movieserivice.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

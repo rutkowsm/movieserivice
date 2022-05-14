@@ -1,7 +1,7 @@
 package com.movieservice.movieserivice.advice;
 
-import exception.IncorrectMovieException;
-import exception.MovieNotFoundException;
+import com.movieservice.movieserivice.exception.IncorrectMovieException;
+import com.movieservice.movieserivice.exception.MovieNotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
