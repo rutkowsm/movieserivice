@@ -1,28 +1,27 @@
 package com.movieservice.movieserivice.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Movie {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private int yearOfRelease;
-    private enum genre {COMEDY, THRILLER, DOCUMENTARY, ACTION, DRAMA};
+    @Enumerated(EnumType.STRING)
+    private Genre genre;
 
     public Movie() {
     }
 
 
-    public Movie(Long id, String title, int yearOfRelease) {
+    public Movie(Long id, String title, int yearOfRelease, Genre genre) {
         this.id = id;
         this.title = title;
         this.yearOfRelease = yearOfRelease;
+        this.genre = genre;
     }
 
     public Long getId() {
@@ -47,5 +46,22 @@ public class Movie {
 
     public void setYearOfRelease(int yearOfRelease) {
         this.yearOfRelease = yearOfRelease;
+    }
+
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
+    }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "id=" + id +
+                ", Title=" + title +
+                ", YearOfRelease=" + yearOfRelease +
+                ", Genre=" + genre + "}";
     }
 }
