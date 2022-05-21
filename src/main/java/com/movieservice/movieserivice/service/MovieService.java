@@ -2,6 +2,7 @@ package com.movieservice.movieserivice.service;
 
 import com.movieservice.movieserivice.entity.Movie;
 import com.movieservice.movieserivice.exception.MovieNotFoundException;
+import com.movieservice.movieserivice.repository.MovieRepo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,7 +12,10 @@ public class MovieService {
 
     private List<Movie> movies;
 
-    MovieService(){
+    private final MovieRepo movieRepo;
+
+    public MovieService(MovieRepo movieRepo){
+        this.movieRepo = movieRepo;
         this.movies = List.of(new Movie());
     }
 
@@ -37,6 +41,8 @@ public class MovieService {
         return movie;
     }
 
-
+    public void deleteMovie(Long id) {
+        movieRepo.deleteById(id);
+    }
 
 }
