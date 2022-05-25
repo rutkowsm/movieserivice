@@ -27,7 +27,7 @@ public class MovieController {
         return ResponseEntity.ok(this.movieService.getMovieById(id));
     }
 
-    @PostMapping("/getmovies")
+    @PostMapping("/add")
     public ResponseEntity<Movie> addMovie(@RequestBody Movie movie){
         return ResponseEntity.ok(this.movieService.addMovie(movie));
     }

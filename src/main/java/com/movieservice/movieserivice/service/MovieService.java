@@ -16,18 +16,14 @@ public class MovieService {
 
     public MovieService(MovieRepo movieRepo){
         this.movieRepo = movieRepo;
-        this.movies = List.of(new Movie());
     }
 
     public List<Movie> getMovies(){
-        return this.movies;
-    }
+        return movieRepo.findAll();
+            }
 
     public Movie getMovieById(Long id) {
-        return this.getMovies().stream()
-                .filter(movie -> movie.getId().equals(id))
-                .findFirst()
-                .orElseThrow(MovieNotFoundException::new);
+        return (Movie) movieRepo.getMovieById(id).orElseThrow(MovieNotFoundException::new);
     }
 
     public Movie addMovie(Movie movie){
